@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - HTML Forms</title>
+</head>
+<body>
+    <h1>HTML Forms Practice</h1>
+    <p>Learning how to collect user input using forms</p>
+    
+    <hr>
+    
+    <!-- Basic Form -->
+    <h2>User Registration Form</h2>
+    <form>
+        <!-- Text Input -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required>
+        <br><br>
+        
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        <br><br>
+        
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <br><br>
+        
+        <!-- Number Input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100">
+        <br><br>
+        
+        <!-- Date Input -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <br><br>
+        
+        <!-- Radio Buttons -->
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <br><br>
+        
+        <!-- Checkboxes -->
+        <p>Skills:</p>
+        <input type="checkbox" id="html" name="skills" value="html">
+        <label for="html">HTML</label>
+        
+        <input type="checkbox" id="css" name="skills" value="css">
+        <label for="css">CSS</label>
+        
+        <input type="checkbox" id="js" name="skills" value="js">
+        <label for="js">JavaScript</label>
+        <br><br>
+        
+        <!-- Dropdown -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">--Select Country--</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+        </select>
+        <br><br>
+        
+        <!-- Textarea -->
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message here..."></textarea>
+        <br><br>
+        
+        <!-- File Upload -->
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume">
+        <br><br>
+        
+        <!-- Color Picker -->
+        <label for="favcolor">Favorite Color:</label>
+        <input type="color" id="favcolor" name="favcolor">
+        <br><br>
+        
+        <!-- Submit Button -->
+        <button type="submit">Submit Form</button>
+        
+        <!-- Reset Button -->
+        <button type="reset">Reset Form</button>
+    </form>
+    
+    <hr>
+    
+    <!-- What I Learned Section -->
+    <h2>What I Learned Today:</h2>
+    <ul>
+        <li>How to create forms using &lt;form&gt; tag</li>
+        <li>Different input types: text, email, password, number, date</li>
+        <li>Radio buttons for single selection</li>
+        <li>Checkboxes for multiple selection</li>
+        <li>Dropdown menus using &lt;select&gt;</li>
+        <li>Text area for long text input</li>
+        <li>File upload and color picker</li>
+        <li>Form buttons: submit and reset</li>
+    </ul>
+    
+    <footer>
+        <p><strong>Date:</strong> Day 2 Practice</p>
+        <p><em>Forms are essential for user interaction!</em></p>
+    </footer>
+</body>
+</html>
