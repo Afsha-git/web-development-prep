@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Semantic HTML & Tables</title>
+</head>
+<body>
+    <!-- Semantic HTML Structure -->
+    <header>
+        <h1>My Learning Blog</h1>
+        <nav>
+            <a href="#home">Home</a> | 
+            <a href="#about">About</a> | 
+            <a href="#blog">Blog</a> | 
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <hr>
+    
+    <!-- Main Content Area -->
+    <main>
+        <!-- Article Section -->
+        <article>
+            <header>
+                <h2>Understanding Semantic HTML</h2>
+                <p><time datetime="2026-02-05">February 5, 2026</time> | By Afsha</p>
+            </header>
+            
+            <section>
+                <h3>What is Semantic HTML?</h3>
+                <p>Semantic HTML uses tags that describe their meaning, making code more readable for developers and accessible for screen readers.</p>
+            </section>
+            
+            <section>
+                <h3>Common Semantic Tags:</h3>
+                <ul>
+                    <li><strong>&lt;header&gt;</strong> - Page or section header</li>
+                    <li><strong>&lt;nav&gt;</strong> - Navigation links</li>
+                    <li><strong>&lt;main&gt;</strong> - Main content area</li>
+                    <li><strong>&lt;article&gt;</strong> - Independent content</li>
+                    <li><strong>&lt;section&gt;</strong> - Thematic grouping</li>
+                    <li><strong>&lt;aside&gt;</strong> - Side content</li>
+                    <li><strong>&lt;footer&gt;</strong> - Page or section footer</li>
+                </ul>
+            </section>
+        </article>
+        
+        <hr>
+        
+        <!-- Tables Section -->
+        <section>
+            <h2>HTML Tables</h2>
+            
+            <!-- Basic Table -->
+            <h3>Student Marks Table</h3>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Math</th>
+                        <th>Science</th>
+                        <th>English</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Rahul Kumar</td>
+                        <td>85</td>
+                        <td>90</td>
+                        <td>88</td>
+                        <td>263</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Priya Sharma</td>
+                        <td>92</td>
+                        <td>88</td>
+                        <td>95</td>
+                        <td>275</td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Amit Singh</td>
+                        <td>78</td>
+                        <td>82</td>
+                        <td>80</td>
+                        <td>240</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"><strong>Average</strong></td>
+                        <td><strong>259</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <br>
+            
+            <!-- Table with Colspan and Rowspan -->
+            <h3>Weekly Schedule</h3>
+            <table border="1" cellpadding="8">
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                </tr>
+                <tr>
+                    <td>9:00 AM</td>
+                    <td>HTML</td>
+                    <td>CSS</td>
+                    <td>JavaScript</td>
+                </tr>
+                <tr>
+                    <td>11:00 AM</td>
+                    <td colspan="3">Practice Session</td>
+                </tr>
+                <tr>
+                    <td>2:00 PM</td>
+                    <td rowspan="2">Project Work</td>
+                    <td>React</td>
+                    <td>Node.js</td>
+                </tr>
+                <tr>
+                    <td>4:00 PM</td>
+                    <td>Database</td>
+                    <td>Git/GitHub</td>
+                </tr>
+            </table>
+        </section>
+        
+        <hr>
+        
+        <!-- Aside Section -->
+        <aside>
+            <h3>Quick Tips</h3>
+            <blockquote>
+                <p>"Semantic HTML improves SEO and accessibility. Always use the right tag for the right purpose!"</p>
+            </blockquote>
+        </aside>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Learning Journey. All rights reserved.</p>
+        <p>Contact: <a href="mailto:learning@example.com">learning@example.com</a></p>
+        <p><small>Built with HTML semantic tags</small></p>
+    </footer>
+</body>
+</html>
