@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning HTML media elements and special characters">
+    <meta name="keywords" content="HTML, media, video, audio, iframe">
+    <meta name="author" content="Afsha">
+    <title>Day 4 - Media Elements & Entities</title>
+</head>
+<body>
+    <header>
+        <h1>HTML Media Elements & Special Characters</h1>
+        <p>Learning how to embed media and use HTML entities</p>
+    </header>
+    
+    <hr>
+    
+    <main>
+        <!-- Images Section -->
+        <section>
+            <h2>1. Images</h2>
+            
+            <!-- Basic Image -->
+            <h3>Basic Image:</h3>
+            <img src="https://via.placeholder.com/400x200/FF5733/ffffff?text=HTML+Learning" 
+                 alt="HTML Learning Banner" 
+                 width="400">
+            
+            <br><br>
+            
+            <!-- Image with Link -->
+            <h3>Clickable Image:</h3>
+            <a href="https://github.com/Afsha-git/web-development-prep" target="_blank">
+                <img src="https://via.placeholder.com/300x150/4CAF50/ffffff?text=Visit+GitHub" 
+                     alt="GitHub Link" 
+                     width="300">
+            </a>
+            
+            <br><br>
+            
+            <!-- Figure with Caption -->
+            <h3>Image with Caption:</h3>
+            <figure>
+                <img src="https://via.placeholder.com/350x200/3498db/ffffff?text=Web+Development" 
+                     alt="Web Development" 
+                     width="350">
+                <figcaption>Fig 1: Web Development Journey</figcaption>
+            </figure>
+        </section>
+        
+        <hr>
+        
+        <!-- Video Section -->
+        <section>
+            <h2>2. Video Element</h2>
+            
+            <!-- Video with Controls -->
+            <h3>HTML5 Video Player:</h3>
+            <video width="400" controls poster="https://via.placeholder.com/400x225/e74c3c/ffffff?text=Video+Poster">
+                <source src="sample-video.mp4" type="video/mp4">
+                <source src="sample-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            
+            <p><strong>Video Attributes:</strong></p>
+            <ul>
+                <li><code>controls</code> - Shows play, pause, volume controls</li>
+                <li><code>autoplay</code> - Starts playing automatically</li>
+                <li><code>loop</code> - Repeats the video</li>
+                <li><code>muted</code> - Starts muted</li>
+                <li><code>poster</code> - Thumbnail before playing</li>
+            </ul>
+        </section>
+        
+        <hr>
+        
+        <!-- Audio Section -->
+        <section>
+            <h2>3. Audio Element</h2>
+            
+            <!-- Audio Player -->
+            <h3>HTML5 Audio Player:</h3>
+            <audio controls>
+                <source src="sample-audio.mp3" type="audio/mpeg">
+                <source src="sample-audio.ogg" type="audio/ogg">
+                Your browser does not support the audio tag.
+            </audio>
+            
+            <p><strong>Audio Attributes:</strong></p>
+            <ul>
+                <li><code>controls</code> - Shows audio controls</li>
+                <li><code>autoplay</code> - Starts automatically</li>
+                <li><code>loop</code> - Repeats audio</li>
+                <li><code>muted</code> - Starts muted</li>
+            </ul>
+        </section>
+        
+        <hr>
+        
+        <!-- iFrame Section -->
+        <section>
+            <h2>4. iFrame (Embedded Content)</h2>
+            
+            <!-- YouTube Video -->
+            <h3>Embedded YouTube Video:</h3>
+            <iframe width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/HcOc7P5BMi4" 
+                    title="YouTube video player"
