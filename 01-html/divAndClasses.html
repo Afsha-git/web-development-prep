@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - Divs, Spans, Classes & IDs</title>
+    
+    <!-- Internal CSS for demonstration -->
+    <style>
+        /* Styling by Class */
+        .container {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #f4f4f4;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        
+        .text-red {
+            color: red;
+        }
+        
+        .text-blue {
+            color: blue;
+        }
+        
+        .text-green {
+            color: green;
+        }
+        
+        .box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+        
+        /* Styling by ID */
+        #header-section {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        #main-content {
+            background-color: #e7f3ff;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        #footer-section {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        #special-paragraph {
+            border-left: 5px solid orange;
+            padding-left: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with ID -->
+    <div id="header-section">
+        <h1>Understanding Divs, Spans, Classes & IDs</h1>
+        <p>Structuring and organizing HTML content</p>
+    </div>
+    
+    <hr>
+    
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Section 1: DIV Element -->
+        <div class="container">
+            <h2>1. The &lt;div&gt; Element (Block-level)</h2>
+            <p>The <code>&lt;div&gt;</code> tag is a <strong>block-level</strong> container used to group content.</p>
+            
+            <div style="background-color: lightblue; padding: 10px;">
+                <p>This is inside a div with inline style.</p>
+                <p>Divs take up the <strong>full width</strong> available.</p>
+            </div>
+            
+            <div style="background-color: lightcoral; padding: 10px;">
+                <p>This is another div below the first one.</p>
+                <p>Notice how it starts on a <strong>new line</strong>.</p>
+            </div>
+        </div>
+        
+        <!-- Section 2: SPAN Element -->
+        <div class="container">
+            <h2>2. The &lt;span&gt; Element (Inline)</h2>
+            <p>The <code>&lt;span&gt;</code> tag is an <strong>inline</strong> container.</p>
+            
+            <p>This is a <span class="highlight">highlighted word</span> using span with class.</p>
+            
+            <p>You can have <span class="text-red">red text</span>, 
+               <span class="text-blue">blue text</span>, and 
+               <span class="text-green">green text</span> in the same line!</p>
+            
+            <p>Price: <span style="font-size: 24px; color: orange; font-weight: bold;">$99.99</span></p>
+        </div>
+        
+        <!-- Section 3: DIV vs SPAN -->
+        <div class="container">
+            <h2>3. Difference: &lt;div&gt; vs &lt;span&gt;</h2>
+            
+            <h3>Using DIV (Block-level):</h3>
+            <div style="background: #ffcccc; padding: 5px;">First div</div>
+            <div style="background: #ccffcc; padding: 5px;">Second div</div>
+            <div style="background: #ccccff; padding: 5px;">Third div</div>
+            <p>☝️ Each div starts on a new line (takes full width)</p>
+            
+            <h3>Using SPAN (Inline):</h3>
+            <span style="background: #ffcccc; padding: 5px;">First span</span>
+            <span style="background: #ccffcc; padding: 5px;">Second span</span>
+            <span style="background: #ccccff; padding: 5px;">Third span</span>
+            <p>☝️ All spans stay on the same line (only take needed width)</p>
+        </div>
+        
+        <!-- Section 4: CLASS Attribute -->
+        <div class="container">
+            <h2>4. CLASS Attribute (Can be reused)</h2>
+            <p>Classes can be applied to <strong>multiple elements</strong>.</p>
+            
+            <div class="box">
+                <h3>Box 1</h3>
+                <p>This uses the "box" class.</p>
+            </div>
+            
+            <div class="box">
+                <h3>Box 2</h3>
+                <p>This also uses the "box" class.</p>
+            </div>
+            
+            <div class="box">
+                <h3>Box 3</h3>
+                <p>Same "box" class again!</p>
+            </div>
+            
+            <br><br>
+            
+            <h3>Multiple Classes on One Element:</h3>
+            <p class="highlight text-red">This paragraph has TWO classes: "highlight" and "text-red"</p>
+            <p class="highlight text-blue">This has "highlight" and "text-blue"</p>
+        </div>
+        
+        <!-- Section 5: ID Attribute -->
+        <div class="container">
+            <h2>5. ID Attribute (Unique)</h2>
+            <p>IDs should be <strong>unique</strong> - only ONE element can have a specific ID.</p>
+            
+            <p id="special-paragraph">
+                This paragraph has a unique ID "special-paragraph". 
+                Only THIS element can have this ID on the entire page.
+            </p>
+            
+            <p>Regular paragraph without ID.</p>
+            
+            <h3>IDs are useful for:</h3>
+            <ul>
+                <li>JavaScript targeting (getElementById)</li>
+                <li>CSS specific styling</li>
+                <li>Anchor links (jump to section)</li>
+                <li>Form label connections</li>
+            </ul>
+        </div>
+        
+        <!-- Section 6: CLASS vs ID -->
+        <div class="container">
+            <h2>6. CLASS vs ID - When to Use?</h2>
+            
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>CLASS</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Usage</strong></td>
+                        <td>Multiple elements</td>
+                        <td>ONE element only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Syntax</strong></td>
+                        <td>class="name"</td>
+                        <td>id="name"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CSS Selector</strong></td>
+                        <td>.classname</td>
+                        <td>#idname</td>
+                    </tr>
+                    <tr>
+                        <td><strong>JavaScript</strong></td>
+                        <td>getElementsByClassName()</td>
+                        <td>getElementById()</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reusable?</strong></td>
+                        <td>✅ Yes</td>
+                        <td>❌ No (unique)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Multiple values?</strong></td>
+                        <td>✅ Yes (space-separated)</td>
+                        <td>❌ No (only one ID)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best for</strong></td>
+                        <td>Styling groups of elements</td>
+                        <td>Unique sections, JavaScript</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Section 7: Practical Examples -->
+        <div class="container">
+            <h2>7. Practical Examples</h2>
+            
+            <h3>Example 1: Card Layout with Classes</h3>
+            <div class="box">
+                <h4>Product 1</h4>
+                <p>Price: $29.99</p>
+                <button>Buy Now</button>
+            </div>
+            
+            <div class="box">
+                <h4>Product 2</h4>
+                <p>Price: $39.99</p>
+                <button>Buy Now</button>
+            </div>
+            
+            <div class="box">
+                <h4>Product 3</h4>
+                <p>Price: $49.99</p>
+                <button>Buy Now</button>
+            </div>
+            
+            <br><br>
+            
+            <h3>Example 2: Navigation with ID</h3>
+            <nav id="main-navigation" style="background: #333; padding: 10px;">
+                <a href="#home" style="color: white; margin: 0 10px;">Home</a>
+                <a href="#about" style="color: white; margin: 0 10px;">About</a>
+                <a href="#services" style="color: white; margin: 0 10px;">Services</a>
+                <a href="#contact" style="color: white; margin: 0 10px;">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- Section 8: Nesting Divs -->
+        <div class="container">
+            <h2>8. Nesting Divs (Divs inside Divs)</h2>
+            
+            <div style="border: 3px solid red; padding: 10px;">
+                <h3>Outer Div (Red border)</h3>
+                
+                <div style="border: 3px solid blue; padding: 10px; margin: 10px;">
+                    <h4>Middle Div (Blue border)</h4>
+                    
+                    <div style="border: 3px solid green; padding: 10px; margin: 10px;">
+                        <h5>Inner Div (Green border)</h5>
+                        <p>This is the innermost content!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 9: Summary -->
+        <div class="container">
+            <h2>9. What I Learned Today</h2>
+            <ol>
+                <li><code>&lt;div&gt;</code> is block-level, takes full width</li>
+                <li><code>&lt;span&gt;</code> is inline, takes only needed width</li>
+                <li><strong>class</strong> can be used on multiple elements</li>
+                <li><strong>id</strong> must be unique on the page</li>
+                <li>Classes use <code>.classname</code> in CSS</li>
+                <li>IDs use <code>#idname</code> in CSS</li>
+                <li>Elements can have multiple classes</li>
+                <li>Divs can be nested inside each other</li>
+            </ol>
+        </div>
+    </div>
+    
+    <!-- Footer with ID -->
+    <div id="footer-section">
+        <p>&copy; 2026 HTML Learning Journey - Day 5 Complete!</p>
+        <p><small>Divs, Spans, Classes & IDs Mastered ✓</small></p>
+    </div>
+</body>
+</html>
