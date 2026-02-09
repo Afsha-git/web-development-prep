@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning HTML5 features and web accessibility best practices">
+    <meta name="keywords" content="HTML5, accessibility, ARIA, semantic HTML">
+    <meta name="author" content="Afsha">
+    <title>Day 7 - HTML5 Features & Accessibility</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin: 20px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 15px 0 10px 0;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table th {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .danger {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .example-box {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        progress {
+            width: 100%;
+            height: 30px;
+        }
+        
+        meter {
+            width: 100%;
+            height: 30px;
+        }
+        
+        details {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        summary:hover {
+            color: #764ba2;
+        }
+        
+        kbd {
+            background-color: #333;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        
+        mark {
+            background-color: yellow;
+            padding: 2px 4px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link (for accessibility) -->
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px;">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <h1>HTML5 Features & Web Accessibility</h1>
+        <p>Building modern, accessible web pages</p>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Section 1: HTML5 Semantic Elements -->
+        <section class="container">
+            <h2>1. HTML5 Semantic Elements</h2>
+            
+            <div class="success">
+                <strong>Why Semantic HTML?</strong>
+                <ul>
+                    <li>✅ Better SEO (search engines understand structure)</li>
+                    <li>✅ Improved accessibility (screen readers work better)</li>
+                    <li>✅ Easier to read and maintain code</li>
+                    <li>✅ More meaningful than generic divs</li>
+                </ul>
+            </div>
+            
+            <h3>Main Semantic Tags:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Purpose</th>
+                        <th>Example Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;header&gt;</code></td>
+                        <td>Header section</td>
+                        <td>Site header, article header</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;nav&gt;</code></td>
+                        <td>Navigation links</td>
+                        <td>Main menu, breadcrumbs</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;main&gt;</code></td>
+                        <td>Main content (unique per page)</td>
+                        <td>Primary page content</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;article&gt;</code></td>
+                        <td>Independent content</td>
+                        <td>Blog post, news article</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;section&gt;</code></td>
+                        <td>Thematic grouping</td>
+                        <td>Chapters, topics</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;aside&gt;</code></td>
+                        <td>Sidebar/related content</td>
+                        <td>Ads, related links</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;footer&gt;</code></td>
+                        <td>Footer section</td>
+                        <td>Copyright, contact info</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;figure&gt;</code></td>
+                        <td>Self-contained content</td>
+                        <td>Image with caption</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;figcaption&gt;</code></td>
+                        <td>Caption for figure</td>
+                        <td>Image description</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;time&gt;</code></td>
+                        <td>Date/time</td>
+                        <td>Publication date</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;mark&gt;</code></td>
+                        <td>Highlighted text</td>
+                        <td>Search results highlight</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Example Structure:</h3>
+            <pre>&lt;body&gt;
+  &lt;header&gt;
+    &lt;nav&gt;Navigation&lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;section&gt;Content&lt;/section&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;Sidebar&lt;/aside&gt;
+  &lt;/main&gt;
+  
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/body&gt;</pre>
+        </section>
+        
+        <!-- Section 2: HTML5 Form Elements -->
+        <section class="container">
+            <h2>2. HTML5 Form Input Types</h2>
+            
+            <h3>New Input Types:</h3>
+            <div class="example-box">
+                <form>
+                    <label for="email-input">Email:</label><br>
+                    <input type="email" id="email-input" placeholder="user@example.com" required><br><br>
+                    
+                    <label for="url-input">URL:</label><br>
+                    <input type="url" id="url-input" placeholder="https://example.com"><br><br>
+                    
+                    <label for="tel-input">Phone:</label><br>
+                    <input type="tel" id="tel-input" placeholder="+91-9876543210"><br><br>
+                    
+                    <label for="number-input">Number (1-100):</label><br>
+                    <input type="number" id="number-input" min="1" max="100" step="5"><br><br>
+                    
+                    <label for="range-input">Range:</label><br>
+                    <input type="range" id="range-input" min="0" max="100" value="50"><br><br>
+                    
+                    <label for="date-input">Date:</label><br>
+                    <input type="date" id="date-input"><br><br>
+                    
+                    <label for="time-input">Time:</label><br>
+                    <input type="time" id="time-input"><br><br>
+                    
+                    <label for="datetime-input">Date & Time:</label><br>
+                    <input type="datetime-local" id="datetime-input"><br><br>
+                    
+                    <label for="month-input">Month:</label><br>
+                    <input type="month" id="month-input"><br><br>
+                    
+                    <label for="week-input">Week:</label><br>
+                    <input type="week" id="week-input"><br><br>
+                    
+                    <label for="color-input">Color Picker:</label><br>
+                    <input type="color" id="color-input" value="#667eea"><br><br>
+                    
+                    <label for="search-input">Search:</label><br>
+                    <input type="search" id="search-input" placeholder="Search..."><br><br>
+                </form>
+            </div>
+            
+            <h3>Form Attributes:</h3>
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>required</code></td>
+                    <td>Field must be filled</td>
+                </tr>
+                <tr>
+                    <td><code>placeholder</code></td>
+                    <td>Hint text</td>
+                </tr>
+                <tr>
+                    <td><code>autofocus</code></td>
+                    <td>Auto-focus on page load</td>
+                </tr>
+                <tr>
+                    <td><code>autocomplete</code></td>
+                    <td>Enable/disable autocomplete</td>
+                </tr>
+                <tr>
+                    <td><code>pattern</code></td>
+                    <td>Regular expression validation</td>
+                </tr>
+                <tr>
+                    <td><code>min / max</code></td>
+                    <td>Minimum/maximum values</td>
+                </tr>
+                <tr>
+                    <td><code>step</code></td>
+                    <td>Increment value</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Section 3: HTML5 Media Elements -->
+        <section class="container">
+            <h2>3. HTML5 Progress & Meter</h2>
+            
+            <h3>Progress Bar:</h3>
+            <div class="example-box">
+                <label for="file-progress">File Upload Progress:</label>
+                <progress id="file-progress" value="70" max="100">70%</progress>
+                <p>70% Complete</p>
+            </div>
+            
+            <pre>&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</pre>
+            
+            <h3>Meter (Gauge):</h3>
+            <div class="example-box">
+                <label for="disk-usage">Disk Usage:</label>
+                <meter id="disk-usage" min="0" max="100" value="65" low="30" high="80" optimum="20">65%</meter>
+                <p>65 GB of 100 GB used</p>
+                
+                <label for="score">Test Score:</label>
+                <meter id="score" min="0" max="100" value="85" low="40" high="70" optimum="90">85%</meter>
+                <p>Score: 85/100</p>
+            </div>
+            
+            <pre>&lt;meter min="0" max="100" value="65" low="30" high="80"&gt;65%&lt;/meter&gt;</pre>
+        </section>
+        
+        <!-- Section 4: Details & Summary -->
+        <section class="container">
+            <h2>4. Details & Summary (Collapsible Content)</h2>
+            
+            <div class="example-box">
+                <details>
+                    <summary>Click to expand: What is HTML5?</summary>
+                    <p>HTML5 is the latest version of HyperText Markup Language. It introduced many new features including semantic elements, form improvements, multimedia support, and better APIs for web applications.</p>
+                </details>
+                
+                <details>
+                    <summary>Click to expand: Browser Support</summary>
+                    <p>All modern browsers support HTML5 features including Chrome, Firefox, Safari, Edge, and Opera.</p>
+                </details>
+                
+                <details open>
+                    <summary>This one is open by default</summary>
+                    <p>Use the <code>open</code> attribute to show details by default.</p>
+                </details>
+            </div>
+            
+            <pre>&lt;details&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  &lt;p&gt;Hidden content here&lt;/p&gt;
+&lt;/details&gt;</pre>
+        </section>
+        
+        <!-- Section 5: Data Attributes -->
+        <section class="container">
+            <h2>5. Custom Data Attributes</h2>
+            
+            <div class="highlight">
+                <p><strong>Data attributes</strong> let you store custom data on HTML elements.</p>
+            </div>
+            
+            <h3>Syntax:</h3>
+            <pre>&lt;div data-user-id="12345" data-role="admin" data-status="active"&gt;
+  User Profile
+&lt;/div&gt;</pre>
+            
+            <h3>Example:</h3>
+            <div class="example-box">
+                <article data-article-id="101" data-author="Afsha" data-category="HTML" data-published="2026-02-08">
+                    <h3>Article Title</h3>
+                    <p>Article content goes here...</p>
+                    <p><small>ID: <span id="article-id"></span></small></p>
+                </article>
+            </div>
+            
+            <h3>Access with JavaScript:</h3>
+            <pre>// Get data attribute
+element.getAttribute('data-user-id');
+
+// Or use dataset
+element.dataset.userId;</pre>
+            
+            <h3>Use Cases:</h3>
+            <ul>
+                <li>Store IDs for JavaScript manipulation</li>
+                <li>Keep metadata without affecting display</li>
+                <li>Pass data from backend to frontend</li>
+                <li>Styling hooks in CSS</li>
+            </ul>
+        </section>
+        
+        <!-- Section 6: Accessibility (ARIA) -->
+        <section class="container">
+            <h2>6. Web Accessibility (ARIA)</h2>
+            
+            <div class="success">
+                <strong>Why Accessibility Matters:</strong>
+                <ul>
+                    <li>✅ Helps people with disabilities use your site</li>
+                    <li>✅ Required by law in many countries</li>
+                    <li>✅ Improves SEO</li>
+                    <li>✅ Better user experience for everyone</li>
+                </ul>
+            </div>
+            
+            <h3>ARIA Roles:</h3>
+            <table>
+                <tr>
+                    <th>Role</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><code>role="banner"</code></td>
+                    <td>Site header</td>
+                    <td><code>&lt;header role="banner"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>role="navigation"</code></td>
+                    <td>Navigation menu</td>
+                    <td><code>&lt;nav role="navigation"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>role="main"</code></td>
+                    <td>Main content</td>
+                    <td><code>&lt;main role="main"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>role="contentinfo"</code></td>
+                    <td>Footer info</td>
+                    <td><code>&lt;footer role="contentinfo"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>role="search"</code></td>
+                    <td>Search section</td>
+                    <td><code>&lt;form role="search"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>role="button"</code></td>
+                    <td>Custom button</td>
+                    <td><code>&lt;div role="button"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>role="alert"</code></td>
+                    <td>Alert message</td>
+                    <td><code>&lt;div role="alert"&gt;</code></td>
+                </tr>
+            </table>
+            
+            <h3>ARIA Attributes:</h3>
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><code>aria-label</code></td>
+                    <td>Accessible label for element</td>
+                </tr>
+                <tr>
+                    <td><code>aria-labelledby</code></td>
+                    <td>ID of labeling element</td>
+                </tr>
+                <tr>
+                    <td><code>aria-describedby</code></td>
+                    <td>ID of describing element</td>
+                </tr>
+                <tr>
+                    <td><code>aria-hidden</code></td>
+                    <td>Hide from screen readers</td>
+                </tr>
+                <tr>
+                    <td><code>aria-live</code></td>
+                    <td>Announce dynamic changes</td>
+                </tr>
+                <tr>
+                    <td><code>aria-required</code></td>
+                    <td>Mark field as required</td>
+                </tr>
+            </table>
+            
+            <h3>Examples:</h3>
+            <pre>&lt;button aria-label="Close dialog"&gt;X&lt;/button&gt;
+
+&lt;img src="logo.png" alt="Company Logo" aria-hidden="true"&gt;
+
+&lt;div role="alert" aria-live="polite"&gt;
+  Form submitted successfully!
+&lt;/div&gt;
+
+&lt;input type="text" aria-required="true" aria-describedby="help-text"&gt;
+&lt;small id="help-text"&gt;Enter your full name&lt;/small&gt;</pre>
+        </section>
+        
+        <!-- Section 7: Accessibility Best Practices -->
+        <section class="container">
+            <h2>7. Accessibility Best Practices</h2>
+            
+            <h3>✅ DO:</h3>
+            <div class="success">
+                <ul>
+                    <li><strong>Use semantic HTML</strong> - Use proper tags (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, etc.)</li>
+                    <li><strong>Alt text for images</strong> - Always provide descriptive alt text</li>
+                    <li><strong>Label form inputs</strong> - Every input needs a <code>&lt;label&gt;</code></li>
+                    <li><strong>Keyboard navigation</strong> - Ensure all features work with keyboard</li>
+                    <li><strong>Color contrast</strong> - Text must be readable (WCAG standards)</li>
+                    <li><strong>Focus indicators</strong> - Show where keyboard focus is</li>
+                    <li><strong>Heading hierarchy</strong> - Use h1-h6 in order</li>
+                    <li><strong>Skip links</strong> - Allow skipping to main content</li>
+                    <li><strong>Language attribute</strong> - <code>&lt;html lang="en"&gt;</code></li>
+                </ul>
+            </div>
+            
+            <h3>❌ DON'T:</h3>
+            <div class="danger">
+                <ul>
+                    <li><strong>Don't use divs for buttons</strong> - Use <code>&lt;button&gt;</code></li>
+                    <li><strong>Don't skip heading levels</strong> - h1 → h3 is wrong</li>
+                    <li><strong>Don't use color alone</strong> - Add text/icons too</li>
+                    <li><strong>Don't use "click here"</strong> - Be descriptive</li>
+                    <li><strong>Don't forget keyboard users</strong> - Test with Tab key</li>
+                    <li><strong>Don't auto-play audio/video</strong> - Let users control</li>
+                    <li><strong>Don't use empty alt text</strong> - Unless decorative</li>
+                </ul>
+            </div>
+            
+            <h3>Proper Alt Text Examples:</h3>
+            <table>
+                <tr>
+                    <th>Image Type</th>
+                    <th>Good Alt Text</th>
+                    <th>Bad Alt Text</th>
+                </tr>
+                <tr>
+                    <td>Logo</td>
+                    <td>Company Name logo</td>
+                    <td>Image, Logo</td>
+                </tr>
+                <tr>
+                    <td>Informative</td>
+                    <td>Bar chart showing sales growth</td>
+                    <td>Chart, Graph</td>
+                </tr>
+                <tr>
+                    <td>Decorative</td>
+                    <td>alt="" (empty)</td>
+                    <td>Decoration</td>
+                </tr>
+                <tr>
+                    <td>Functional</td>
+                    <td>Search button</td>
+                    <td>Button</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Section 8: Other HTML5 Elements -->
+        <section class="container">
+            <h2>8. Other Useful HTML5 Elements</h2>
+            
+            <h3>&lt;output&gt; Element:</h3>
+            <div class="example-box">
+                <form oninput="result.value=parseInt(num1.value)+parseInt(num2.value)">
+                    <input type="number" id="num1" value="5"> +
+                    <input type="number" id="num2" value="10"> =
+                    <output name="result" for="num1 num2">15</output>
+                </form>
+            </div>
+            
+            <h3>&lt;datalist&gt; Element (Autocomplete):</h3>
+            <div class="example-box">
+                <label for="browser">Choose your browser:</label>
+                <input list="browsers" id="browser" name="browser">
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                    <option value="Edge">
+                    <option value="Opera">
+                </datalist>
+            </div>
+            
+            <pre>&lt;input list="browsers"&gt;
+&lt;datalist id="browsers"&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+&lt;/datalist&gt;</pre>
+            
+            <h3>Text Formatting Elements:</h3>
+            <div class="example-box">
+                <p><mark>Highlighted text</mark> using &lt;mark&gt;</p>
+                <p><del>Deleted text</del> using &lt;del&gt;</p>
+                <p><ins>Inserted text</ins> using &lt;ins&gt;</p>
+                <p><small>Small text</small> using &lt;small&gt;</p>
+                <p>H<sub>2</sub>O using &lt;sub&gt; (subscript)</p>
+                <p>E=mc<sup>2</sup> using &lt;sup&gt; (superscript)</p>
+                <p><abbr title="HyperText Markup Language">HTML</abbr> using &lt;abbr&gt;</p>
+                <p>Press <kbd>Ctrl</kbd>+<kbd>C</kbd> using &lt;kbd&gt;</p>
+                <p><code>console.log()</code> using &lt;code&gt;</p>
+                <p><var>x</var> = 10 using &lt;var&gt;</p>
+                <p><samp>Error: File not found</samp> using &lt;samp&gt;</p>
+            </div>
+        </section>
+        
+        <!-- Section 9: Summary -->
+        <section class="container">
+            <h2>9. What I Learned Today</h2>
+            <ol>
+                <li><strong>Semantic HTML5 elements</strong> - header, nav, main, article, section, aside, footer</li>
+                <li><strong>New form input types</strong> - email, url, tel, date, time, color, range, etc.</li>
+                <li><strong>Progress and meter</strong> - Visual indicators</li>
+                <li><strong>Details & summary</strong> - Collapsible content</li>
+                <li><strong>Data attributes</strong> - Custom data storage (data-*)</li>
+                <li><strong>ARIA roles & attributes</strong> - Accessibility improvements</li>
+                <li><strong>Accessibility best practices</strong> - Alt text, labels, keyboard navigation</li>
+                <li><strong>Other HTML5 elements</strong> - output, datalist, mark, kbd, etc.</li>
+            </ol>
+            
+            <div class="highlight">
+                <strong>Key Takeaway:</strong> Always build websites that are accessible to everyone. Use semantic HTML, provide alt text, label forms properly, and ensure keyboard navigation works!
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 HTML Learning Journey - Day 7 Complete!</p>
+        <p><small>HTML5 Features & Accessibility Mastered ✓</small></p>
+        <nav>
+            <a href="day6-links-navigation.html" style="color: white;">← Day 6: Links</a> |
+            <a href="#main-content" style="color: white;">Back to Top ↑</a>
+        </nav>
+    </footer>
+</body>
+</html>
